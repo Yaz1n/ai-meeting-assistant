@@ -25,3 +25,8 @@ Build an AI-powered web application that summarizes online meetings and generate
 - A web application with upload and display functionality.
 - Backend APIs for transcription, summarization, and data storage.
 - User documentation for using the application.
+
+## APIs and Tools
+- **Transcription**: AssemblyAI (supports MP3, WAV; free tier available).
+- **NLP**: Hugging Face `transformers` (BART for summarization, BERT-based NER for entity extraction).
+- **Database**: Firebase (for storing meeting metadata and summaries).
