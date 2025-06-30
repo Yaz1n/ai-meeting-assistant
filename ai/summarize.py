@@ -6,27 +6,55 @@ from nltk.tokenize import sent_tokenize
 import re
 from transformers import pipeline
 
+# Ensure immediate output flushing
+sys.stdout.reconfigure(line_buffering=True)
+sys.stderr.reconfigure(line_buffering=True)
+
 # Initialize logging immediately
 logging.basicConfig(
     level=logging.DEBUG,
     format='%(asctime)s - %(levelname)s - %(message)s',
     handlers=[
-        logging.StreamHandler(sys.stdout),
-        logging.FileHandler('summarize.log', mode='a')
+        # Change this line: direct logs to stderr
+        logging.StreamHandler(sys.stderr),
+        logging.FileHandler('summarize.log', mode='a', encoding='utf-8')
     ]
 )
 logger = logging.getLogger(__name__)
 logger.debug("Script initialized")
+# Removed: print("Script started", flush=True)
 
 try:
-    print("Testing Python script execution", file=sys.stdout)
     logger.debug("NLTK punkt download attempt")
     nltk.download('punkt', quiet=True)
     logger.debug("NLTK punkt downloaded successfully")
+    # Removed: print("NLTK punkt loaded", flush=True)
 except Exception as e:
     logger.error(f"Failed to download NLTK punkt: {str(e)}")
-    print(json.dumps({"error": f"NLTK punkt download failed: {str(e)}"}))
+    # Always output JSON even on early exit due to NLTK download
+    print(json.dumps({"error": f"NLTK punkt download failed: {str(e)}"}), flush=True)
     sys.exit(1)
+
+def sanitize_text(text):
+    """Sanitize input text to remove problematic characters."""
+    if not text:
+        return text
+    # Replace newlines and multiple spaces with single space
+    text = re.sub(r'\s+', ' ', text.strip())
+    # Remove non-printable characters
+    text = ''.join(c for c in text if c.isprintable())
+    return text
+
+# Global summarizer instance to avoid re-loading for every call
+# This can significantly speed up subsequent summarizations
+_summarizer = None
+
+def get_summarizer():
+    global _summarizer
+    if _summarizer is None:
+        logger.debug("Loading t5-small model for the first time")
+        _summarizer = pipeline("summarization", model="t5-small")
+    return _summarizer
 
 def summarize_text(text, max_length=150, min_length=50):
     """Summarize the input text using t5-small."""
@@ -34,16 +62,15 @@ def summarize_text(text, max_length=150, min_length=50):
     try:
         if not text or len(text.strip()) < 10:
             logger.error("Transcript too short or empty")
-            return None
+            return None # Indicate failure by returning None
 
-        logger.debug("Loading t5-small model")
-        summarizer = pipeline("summarization", model="t5-small")
+        summarizer = get_summarizer() # Get the global summarizer instance
         summary = summarizer(text, max_length=max_length, min_length=min_length, do_sample=False)
         logger.debug("Summarization successful")
         return summary[0]['summary_text']
     except Exception as e:
         logger.error(f"Summarization error: {str(e)}")
-        return None
+        return None # Indicate failure by returning None
 
 def extract_key_points(text):
     """Extract key discussion points as bullet points."""
@@ -76,7 +103,8 @@ def extract_action_items(text):
         for sentence in sentences:
             if 'to' in sentence.lower() and any(keyword in sentence.lower() for keyword in ['assign', 'task', 'action']):
                 words = sentence.split()
-                assignees = [word for word in words if word[0].isupper() and word not in ['The', 'A', 'An']]
+                # A more robust way to find potential assignees (capitalize check)
+                assignees = [word for word in words if word and word[0].isupper() and word.lower() not in ['the', 'a', 'an', 'to', 'for', 'and', 'but', 'or']]
                 if assignees:
                     action_items.append({"task": sentence, "assignee": assignees})
         return action_items if action_items else []
@@ -102,18 +130,21 @@ def process_transcript(transcript):
     """Process the transcript to generate structured meeting notes."""
     logger.debug(f"Processing transcript: {transcript[:50]}...")
     try:
-        if not transcript or len(transcript.strip()) < 10:
+        sanitized_transcript = sanitize_text(transcript)
+        if not sanitized_transcript or len(sanitized_transcript) < 10:
             logger.error("Invalid transcript provided")
+            # Return a structured error object here
             return {"error": "Invalid transcript provided"}
 
-        summary = summarize_text(transcript)
+        summary = summarize_text(sanitized_transcript)
         if not summary:
             logger.error("Summarization failed")
+            # Return a structured error object here
             return {"error": "Summarization failed"}
 
-        key_points = extract_key_points(transcript)
-        decisions = extract_decisions(transcript)
-        action_items = extract_action_items(transcript)
+        key_points = extract_key_points(sanitized_transcript)
+        decisions = extract_decisions(sanitized_transcript)
+        action_items = extract_action_items(sanitized_transcript)
         conclusion = generate_conclusion(summary, decisions)
 
         return {
@@ -125,21 +156,26 @@ def process_transcript(transcript):
         }
     except Exception as e:
         logger.error(f"Process transcript error: {str(e)}")
+        # Catch all errors and return a structured error object
         return {"error": f"Processing failed: {str(e)}"}
 
 if __name__ == "__main__":
-    logger.debug("Script started")
+    logger.debug("Script started from main block")
     try:
         if len(sys.argv) < 2:
-            logger.error("No transcript provided")
-            print(json.dumps({"error": "No transcript provided"}))
+            logger.error("No transcript provided via command line arguments")
+            # Ensure JSON output even on missing argument
+            print(json.dumps({"error": "No transcript provided"}), flush=True)
             sys.exit(1)
 
         transcript = sys.argv[1]
+        logger.debug(f"Received transcript from CLI: {transcript[:50]}...")
         result = process_transcript(transcript)
-        print(json.dumps(result))
-        logger.debug("Script completed successfully")
+        # Always print the result (either success or error JSON)
+        print(json.dumps(result), flush=True)
+        logger.debug("Script completed successfully (or with handled error)")
     except Exception as e:
-        logger.error(f"Main execution error: {str(e)}")
-        print(json.dumps({"error": f"Main execution failed: {str(e)}"}))
+        logger.error(f"Unhandled main execution error: {str(e)}")
+        # For any unhandled exceptions, still output a JSON error
+        print(json.dumps({"error": f"Unhandled main execution failed: {str(e)}"}), flush=True)
         sys.exit(1)
