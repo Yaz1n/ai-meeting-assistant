@@ -1,3 +1,5 @@
 node_modules/
 .env
 meeting-assistant-firebase-adminsdk.json   
+
+uploads/
