@@ -1,14 +1,62 @@
-.app-container {
-  background-color: #f0f0f0;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+  background-color: #f4f4f4;
 }
 
-.app-title {
-  font-size: 2rem;
-  font-weight: bold;
-  color: #2563eb;
-  text-align: center;
+.upload-component,
+.summary-component,
+.meeting-list-component {
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.upload-component h2,
+.summary-component h2,
+.meeting-list-component h2 {
+  color: #333;
+}
+
+.upload-component form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.upload-component input,
+.upload-component button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.upload-component button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.upload-component button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+.summary-component h3 {
+  color: #555;
+  margin-top: 20px;
+}
+
+.summary-component ul,
+.meeting-list-component ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.meeting-list-component li {
+  margin-bottom: 10px;
 }
