@@ -1,0 +1,15 @@
+# Node.js
+node_modules/
+backend/.env
+frontend/.env
+
+# Python
+ai/venv/
+*.pyc
+__pycache__/
+
+# Firebase
+backend/*.json  # Excludes Firebase service account JSON
+
+# Build artifacts
+frontend/build/
