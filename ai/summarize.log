@@ -1,0 +1,27 @@
+2025-06-30 22:12:43,104 - DEBUG - Script initialized
+2025-06-30 22:12:43,104 - DEBUG - NLTK punkt download attempt
+2025-06-30 22:12:43,261 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 22:12:43,261 - DEBUG - Script started
+2025-06-30 22:12:43,261 - DEBUG - Processing transcript: The team discussed the project timeline and resour...
+2025-06-30 22:12:43,261 - ERROR - Process transcript error: name 'text' is not defined
+2025-06-30 22:12:43,261 - DEBUG - Script completed successfully
+2025-06-30 22:14:22,413 - DEBUG - Script initialized
+2025-06-30 22:14:22,417 - DEBUG - NLTK punkt download attempt
+2025-06-30 22:14:22,552 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 22:14:22,552 - DEBUG - Script started
+2025-06-30 22:14:22,552 - DEBUG - Processing transcript: The team discussed the project timeline and resour...
+2025-06-30 22:14:22,552 - DEBUG - Starting summarization
+2025-06-30 22:14:22,552 - DEBUG - Loading t5-small model
+2025-06-30 22:14:22,552 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-06-30 22:14:22,899 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-06-30 22:14:23,417 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-06-30 22:14:23,681 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-06-30 22:14:23,965 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-06-30 22:14:24,213 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-06-30 22:14:24,469 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/chat_template.jinja HTTP/1.1" 404 0
+2025-06-30 22:14:26,133 - DEBUG - Summarization successful
+2025-06-30 22:14:26,180 - DEBUG - Extracting key points
+2025-06-30 22:14:26,193 - DEBUG - Extracting decisions
+2025-06-30 22:14:26,194 - DEBUG - Extracting action items
+2025-06-30 22:14:26,194 - DEBUG - Generating conclusion
+2025-06-30 22:14:26,195 - DEBUG - Script completed successfully
