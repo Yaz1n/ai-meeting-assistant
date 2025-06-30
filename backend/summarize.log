@@ -1,0 +1,110 @@
+2025-06-30 22:07:20,158 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 22:07:20,158 - DEBUG - Script started
+2025-06-30 22:07:20,158 - DEBUG - Processing transcript: The team discussed the project timeline and resour...
+2025-06-30 22:07:20,158 - DEBUG - Starting summarization
+2025-06-30 22:07:20,159 - DEBUG - Loading facebook/bart-large-cnn
+2025-06-30 22:07:20,161 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-06-30 22:07:20,457 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/config.json HTTP/1.1" 307 0
+2025-06-30 22:07:20,486 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/facebook/bart-large-cnn/37f520fa929c961707657b28798b30c003dd100b/config.json HTTP/1.1" 200 0
+2025-06-30 22:07:21,137 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/generation_config.json HTTP/1.1" 307 0
+2025-06-30 22:07:21,174 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/facebook/bart-large-cnn/37f520fa929c961707657b28798b30c003dd100b/generation_config.json HTTP/1.1" 200 0
+2025-06-30 22:07:21,424 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-06-30 22:07:21,670 - DEBUG - https://huggingface.co:443 "GET /api/models/facebook/bart-large-cnn/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-06-30 22:07:27,016 - DEBUG - Summarization successful
+2025-06-30 22:07:27,229 - DEBUG - Extracting key points
+2025-06-30 22:07:27,243 - DEBUG - Extracting decisions
+2025-06-30 22:07:27,244 - DEBUG - Extracting action items
+2025-06-30 22:07:27,244 - DEBUG - Generating conclusion
+2025-06-30 22:07:27,244 - DEBUG - Script completed successfully
+2025-06-30 22:07:38,136 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 22:07:38,136 - DEBUG - Script started
+2025-06-30 22:07:38,136 - DEBUG - Processing transcript: The team discussed the project timeline and resour...
+2025-06-30 22:07:38,136 - DEBUG - Starting summarization
+2025-06-30 22:07:38,136 - DEBUG - Loading facebook/bart-large-cnn
+2025-06-30 22:07:38,138 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-06-30 22:07:38,427 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/config.json HTTP/1.1" 307 0
+2025-06-30 22:07:38,465 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/facebook/bart-large-cnn/37f520fa929c961707657b28798b30c003dd100b/config.json HTTP/1.1" 200 0
+2025-06-30 22:07:39,092 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/generation_config.json HTTP/1.1" 307 0
+2025-06-30 22:07:39,122 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/facebook/bart-large-cnn/37f520fa929c961707657b28798b30c003dd100b/generation_config.json HTTP/1.1" 200 0
+2025-06-30 22:07:39,363 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-06-30 22:07:39,620 - DEBUG - https://huggingface.co:443 "GET /api/models/facebook/bart-large-cnn/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-06-30 22:07:44,891 - DEBUG - Summarization successful
+2025-06-30 22:07:45,108 - DEBUG - Extracting key points
+2025-06-30 22:07:45,123 - DEBUG - Extracting decisions
+2025-06-30 22:07:45,123 - DEBUG - Extracting action items
+2025-06-30 22:07:45,123 - DEBUG - Generating conclusion
+2025-06-30 22:07:45,123 - DEBUG - Script completed successfully
+2025-06-30 22:08:47,156 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 22:08:47,157 - DEBUG - Script started
+2025-06-30 22:08:47,157 - DEBUG - Processing transcript: The team discussed the project timeline and resour...
+2025-06-30 22:08:47,157 - DEBUG - Starting summarization
+2025-06-30 22:08:47,157 - DEBUG - Loading facebook/bart-large-cnn
+2025-06-30 22:08:47,160 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-06-30 22:08:47,529 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/config.json HTTP/1.1" 307 0
+2025-06-30 22:08:47,558 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/facebook/bart-large-cnn/37f520fa929c961707657b28798b30c003dd100b/config.json HTTP/1.1" 200 0
+2025-06-30 22:08:48,203 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/generation_config.json HTTP/1.1" 307 0
+2025-06-30 22:08:48,235 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/facebook/bart-large-cnn/37f520fa929c961707657b28798b30c003dd100b/generation_config.json HTTP/1.1" 200 0
+2025-06-30 22:08:48,501 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-06-30 22:08:48,754 - DEBUG - https://huggingface.co:443 "GET /api/models/facebook/bart-large-cnn/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-06-30 22:08:56,906 - DEBUG - Summarization successful
+2025-06-30 22:08:57,299 - DEBUG - Extracting key points
+2025-06-30 22:08:57,326 - DEBUG - Extracting decisions
+2025-06-30 22:08:57,327 - DEBUG - Extracting action items
+2025-06-30 22:08:57,327 - DEBUG - Generating conclusion
+2025-06-30 22:08:57,327 - DEBUG - Script completed successfully
+2025-06-30 22:10:02,164 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 22:10:02,164 - DEBUG - Script started
+2025-06-30 22:10:02,164 - DEBUG - Processing transcript: The team discussed the project timeline and resour...
+2025-06-30 22:10:02,164 - DEBUG - Starting summarization
+2025-06-30 22:10:02,164 - DEBUG - Loading facebook/bart-large-cnn
+2025-06-30 22:10:02,167 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-06-30 22:10:02,472 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/config.json HTTP/1.1" 307 0
+2025-06-30 22:10:02,499 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/facebook/bart-large-cnn/37f520fa929c961707657b28798b30c003dd100b/config.json HTTP/1.1" 200 0
+2025-06-30 22:10:03,152 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/generation_config.json HTTP/1.1" 307 0
+2025-06-30 22:10:03,180 - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/facebook/bart-large-cnn/37f520fa929c961707657b28798b30c003dd100b/generation_config.json HTTP/1.1" 200 0
+2025-06-30 22:10:03,424 - DEBUG - https://huggingface.co:443 "HEAD /facebook/bart-large-cnn/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-06-30 22:10:04,077 - DEBUG - https://huggingface.co:443 "GET /api/models/facebook/bart-large-cnn/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-06-30 22:10:09,310 - DEBUG - Summarization successful
+2025-06-30 22:10:09,515 - DEBUG - Extracting key points
+2025-06-30 22:10:09,532 - DEBUG - Extracting decisions
+2025-06-30 22:10:09,532 - DEBUG - Extracting action items
+2025-06-30 22:10:09,532 - DEBUG - Generating conclusion
+2025-06-30 22:10:09,533 - DEBUG - Script completed successfully
+2025-06-30 22:14:56,808 - DEBUG - Script initialized
+2025-06-30 22:14:56,808 - DEBUG - NLTK punkt download attempt
+2025-06-30 22:14:56,954 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 22:14:56,954 - DEBUG - Script started
+2025-06-30 22:14:56,954 - DEBUG - Processing transcript: The team discussed the project timeline and resour...
+2025-06-30 22:14:56,954 - DEBUG - Starting summarization
+2025-06-30 22:14:56,954 - DEBUG - Loading t5-small model
+2025-06-30 22:14:56,956 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-06-30 22:14:57,265 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-06-30 22:14:57,701 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-06-30 22:14:57,953 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-06-30 22:14:58,206 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-06-30 22:14:58,451 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-06-30 22:15:00,491 - DEBUG - Summarization successful
+2025-06-30 22:15:00,577 - DEBUG - Extracting key points
+2025-06-30 22:15:00,607 - DEBUG - Extracting decisions
+2025-06-30 22:15:00,607 - DEBUG - Extracting action items
+2025-06-30 22:15:00,607 - DEBUG - Generating conclusion
+2025-06-30 22:15:00,607 - DEBUG - Script completed successfully
+2025-06-30 22:15:39,224 - DEBUG - Script initialized
+2025-06-30 22:15:39,225 - DEBUG - NLTK punkt download attempt
+2025-06-30 22:15:39,369 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 22:15:39,369 - DEBUG - Script started
+2025-06-30 22:15:39,369 - DEBUG - Processing transcript: The team discussed the project timeline and resour...
+2025-06-30 22:15:39,369 - DEBUG - Starting summarization
+2025-06-30 22:15:39,369 - DEBUG - Loading t5-small model
+2025-06-30 22:15:39,371 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-06-30 22:15:39,756 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-06-30 22:15:40,197 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-06-30 22:15:40,448 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-06-30 22:15:40,705 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-06-30 22:15:40,963 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-06-30 22:15:43,146 - DEBUG - Summarization successful
+2025-06-30 22:15:43,224 - DEBUG - Extracting key points
+2025-06-30 22:15:43,262 - DEBUG - Extracting decisions
+2025-06-30 22:15:43,263 - DEBUG - Extracting action items
+2025-06-30 22:15:43,263 - DEBUG - Generating conclusion
+2025-06-30 22:15:43,263 - DEBUG - Script completed successfully
