@@ -2,14 +2,12 @@ from transformers import pipeline
 import nltk
 from nltk.tokenize import sent_tokenize
 import re
+import sys
+import json
 
 nltk.download('punkt')
 
 def summarize_text(text, max_length=150, min_length=50):
-    """
-    Summarize the input text using BART model.
-    Returns a 2-3 sentence summary.
-    """
     try:
         summarizer = pipeline("summarization", model="facebook/bart-large-cnn")
         summary = summarizer(text, max_length=max_length, min_length=min_length, do_sample=False)
@@ -19,22 +17,15 @@ def summarize_text(text, max_length=150, min_length=50):
         return None
 
 def extract_key_points(text):
-    """
-    Extract key discussion points as bullet points using sentence tokenization.
-    Simplistic approach: select sentences with keywords like 'discussed', 'mentioned'.
-    """
     try:
         sentences = sent_tokenize(text)
         key_points = [s for s in sentences if any(keyword in s.lower() for keyword in ['discussed', 'mentioned', 'talked about'])]
-        return key_points if key_points else sentences[:3]  # Fallback to first 3 sentences
+        return key_points if key_points else sentences[:3]
     except Exception as e:
         print(f"Key points extraction error: {e}")
         return []
 
 def extract_decisions(text):
-    """
-    Extract decisions using regex for phrases like 'decided to', 'agreed to'.
-    """
     try:
         sentences = sent_tokenize(text)
         decisions = [s for s in sentences if any(keyword in s.lower() for keyword in ['decided to', 'agreed to', 'resolved to'])]
@@ -44,9 +35,6 @@ def extract_decisions(text):
         return []
 
 def extract_action_items(text):
-    """
-    Extract action items and assignees using BERT-based NER.
-    """
     try:
         ner = pipeline("ner", model="dslim/bert-base-NER", grouped_entities=True)
         sentences = sent_tokenize(text)
@@ -63,9 +51,6 @@ def extract_action_items(text):
         return []
 
 def generate_conclusion(summary, decisions):
-    """
-    Generate a conclusion based on the summary and decisions.
-    """
     try:
         if decisions:
             return f"The meeting concluded with key decisions: {', '.join(decisions[:2])}. {summary}"
@@ -75,9 +60,6 @@ def generate_conclusion(summary, decisions):
         return summary
 
 def process_transcript(transcript):
-    """
-    Process the transcript to generate structured meeting notes.
-    """
     summary = summarize_text(transcript)
     if not summary:
         return {"error": "Summarization failed"}
@@ -96,13 +78,10 @@ def process_transcript(transcript):
     }
 
 if __name__ == "__main__":
-    # Sample transcript for testing
-    sample_transcript = """
-    The team discussed the project timeline and resource allocation. John mentioned that the backend development is on track. The team decided to launch the app in two weeks. It was agreed to assign the UI testing task to Sarah. The meeting concluded with a plan to review progress next week.
-    """
-    result = process_transcript(sample_transcript)
-    print("Summary:", result["summary"])
-    print("Key Points:", result["key_points"])
-    print("Decisions:", result["decisions"])
-    print("Action Items:", result["action_items"])
-    print("Conclusion:", result["conclusion"])
+    if len(sys.argv) < 2:
+        print(json.dumps({"error": "No transcript provided"}))
+        sys.exit(1)
+    
+    transcript = sys.argv[1]
+    result = process_transcript(transcript)
+    print(json.dumps(result))
