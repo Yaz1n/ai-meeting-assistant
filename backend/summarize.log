@@ -108,3 +108,160 @@
 2025-06-30 22:15:43,263 - DEBUG - Extracting action items
 2025-06-30 22:15:43,263 - DEBUG - Generating conclusion
 2025-06-30 22:15:43,263 - DEBUG - Script completed successfully
+2025-06-30 23:36:33,196 - DEBUG - Script initialized
+2025-06-30 23:36:33,196 - DEBUG - NLTK punkt download attempt
+2025-06-30 23:36:33,349 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 23:36:33,349 - DEBUG - Script started
+2025-06-30 23:36:33,349 - DEBUG - Processing transcript: Hello. Good morning, guys. Welcome to today's news...
+2025-06-30 23:36:33,349 - DEBUG - Starting summarization
+2025-06-30 23:36:33,349 - DEBUG - Loading t5-small model
+2025-06-30 23:36:33,349 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-06-30 23:36:34,044 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-06-30 23:36:34,899 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-06-30 23:36:35,557 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-06-30 23:36:35,819 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-06-30 23:36:36,057 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-06-30 23:36:37,567 - DEBUG - Summarization successful
+2025-06-30 23:36:37,617 - DEBUG - Extracting key points
+2025-06-30 23:36:37,634 - DEBUG - Extracting decisions
+2025-06-30 23:36:37,634 - DEBUG - Extracting action items
+2025-06-30 23:36:37,634 - DEBUG - Generating conclusion
+2025-06-30 23:36:37,634 - DEBUG - Script completed successfully
+2025-06-30 23:39:43,426 - DEBUG - Script initialized
+2025-06-30 23:39:43,426 - DEBUG - NLTK punkt download attempt
+2025-06-30 23:39:43,570 - DEBUG - NLTK punkt downloaded successfully
+2025-06-30 23:39:43,570 - DEBUG - Script started
+2025-06-30 23:39:43,570 - DEBUG - Processing transcript: Team discussed the project timeline and resource a...
+2025-06-30 23:39:43,570 - DEBUG - Starting summarization
+2025-06-30 23:39:43,570 - DEBUG - Loading t5-small model
+2025-06-30 23:39:43,574 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-06-30 23:39:43,927 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-06-30 23:39:44,392 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-06-30 23:39:44,643 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-06-30 23:39:44,929 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-06-30 23:39:45,169 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-06-30 23:39:48,874 - DEBUG - Summarization successful
+2025-06-30 23:39:48,993 - DEBUG - Extracting key points
+2025-06-30 23:39:49,039 - DEBUG - Extracting decisions
+2025-06-30 23:39:49,039 - DEBUG - Extracting action items
+2025-06-30 23:39:49,039 - DEBUG - Generating conclusion
+2025-06-30 23:39:49,039 - DEBUG - Script completed successfully
+2025-07-01 00:06:23,239 - DEBUG - Script initialized
+2025-07-01 00:06:23,239 - DEBUG - NLTK punkt download attempt
+2025-07-01 00:06:23,423 - DEBUG - NLTK punkt downloaded successfully
+2025-07-01 00:06:23,423 - DEBUG - Script started
+2025-07-01 00:06:23,423 - DEBUG - Processing transcript: Team discussed the project timeline and resource a...
+2025-07-01 00:06:23,423 - DEBUG - Starting summarization
+2025-07-01 00:06:23,423 - DEBUG - Loading t5-small model
+2025-07-01 00:06:23,431 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-07-01 00:06:23,843 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-07-01 00:06:24,352 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-07-01 00:06:24,661 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-07-01 00:06:24,976 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-07-01 00:06:25,385 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-07-01 00:06:26,885 - DEBUG - Summarization successful
+2025-07-01 00:06:26,929 - DEBUG - Extracting key points
+2025-07-01 00:06:27,008 - DEBUG - Extracting decisions
+2025-07-01 00:06:27,008 - DEBUG - Extracting action items
+2025-07-01 00:06:27,008 - DEBUG - Generating conclusion
+2025-07-01 00:06:27,008 - DEBUG - Script completed successfully
+2025-07-01 00:19:25,639 - DEBUG - Script initialized
+2025-07-01 00:19:25,639 - DEBUG - NLTK punkt download attempt
+2025-07-01 00:19:25,890 - DEBUG - NLTK punkt downloaded successfully
+2025-07-01 00:19:25,890 - DEBUG - Script started
+2025-07-01 00:19:25,890 - DEBUG - Received transcript: The team discussed the project timeline and resour...
+2025-07-01 00:19:25,890 - DEBUG - Processing transcript: The team discussed the project timeline and resour...
+2025-07-01 00:19:25,891 - DEBUG - Starting summarization
+2025-07-01 00:19:25,891 - DEBUG - Loading t5-small model
+2025-07-01 00:19:25,893 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-07-01 00:19:26,256 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-07-01 00:19:26,763 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-07-01 00:19:27,487 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-07-01 00:19:27,811 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-07-01 00:19:28,211 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-07-01 00:19:29,657 - DEBUG - Summarization successful
+2025-07-01 00:19:29,698 - DEBUG - Extracting key points
+2025-07-01 00:19:29,718 - DEBUG - Extracting decisions
+2025-07-01 00:19:29,718 - DEBUG - Extracting action items
+2025-07-01 00:19:29,718 - DEBUG - Generating conclusion
+2025-07-01 00:19:29,718 - DEBUG - Script completed successfully
+2025-07-01 00:22:26,013 - DEBUG - Script initialized
+2025-07-01 00:22:26,013 - DEBUG - NLTK punkt download attempt
+2025-07-01 00:22:26,173 - DEBUG - NLTK punkt downloaded successfully
+2025-07-01 00:22:26,173 - DEBUG - Script started
+2025-07-01 00:22:26,173 - DEBUG - Received transcript: Team discussed the project timeline and resource a...
+2025-07-01 00:22:26,173 - DEBUG - Processing transcript: Team discussed the project timeline and resource a...
+2025-07-01 00:22:26,173 - DEBUG - Starting summarization
+2025-07-01 00:22:26,173 - DEBUG - Loading t5-small model
+2025-07-01 00:22:26,189 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-07-01 00:22:26,801 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-07-01 00:22:27,279 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-07-01 00:22:27,599 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-07-01 00:22:27,966 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-07-01 00:22:28,313 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-07-01 00:22:29,730 - DEBUG - Summarization successful
+2025-07-01 00:22:29,773 - DEBUG - Extracting key points
+2025-07-01 00:22:29,789 - DEBUG - Extracting decisions
+2025-07-01 00:22:29,789 - DEBUG - Extracting action items
+2025-07-01 00:22:29,789 - DEBUG - Generating conclusion
+2025-07-01 00:22:29,789 - DEBUG - Script completed successfully
+2025-07-01 00:49:21,807 - DEBUG - Script initialized
+2025-07-01 00:49:21,807 - DEBUG - NLTK punkt download attempt
+2025-07-01 00:49:21,963 - DEBUG - NLTK punkt downloaded successfully
+2025-07-01 00:49:21,963 - DEBUG - Script started
+2025-07-01 00:49:21,963 - DEBUG - Received transcript: Team discussed the project timeline and resource a...
+2025-07-01 00:49:21,963 - DEBUG - Processing transcript: Team discussed the project timeline and resource a...
+2025-07-01 00:49:21,963 - DEBUG - Starting summarization
+2025-07-01 00:49:21,963 - DEBUG - Loading t5-small model
+2025-07-01 00:49:21,969 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-07-01 00:49:22,380 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-07-01 00:49:22,893 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-07-01 00:49:23,587 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-07-01 00:49:23,916 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-07-01 00:49:24,225 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-07-01 00:49:25,611 - DEBUG - Summarization successful
+2025-07-01 00:49:25,661 - DEBUG - Extracting key points
+2025-07-01 00:49:25,669 - DEBUG - Extracting decisions
+2025-07-01 00:49:25,677 - DEBUG - Extracting action items
+2025-07-01 00:49:25,677 - DEBUG - Generating conclusion
+2025-07-01 00:49:25,677 - DEBUG - Script completed successfully
+2025-07-01 00:55:05,286 - DEBUG - Script initialized
+2025-07-01 00:55:05,286 - DEBUG - NLTK punkt download attempt
+2025-07-01 00:55:05,457 - DEBUG - NLTK punkt downloaded successfully
+2025-07-01 00:55:05,457 - DEBUG - Script started from main block
+2025-07-01 00:55:05,457 - DEBUG - Received transcript from CLI: Team discussed the project timeline and resource a...
+2025-07-01 00:55:05,457 - DEBUG - Processing transcript: Team discussed the project timeline and resource a...
+2025-07-01 00:55:05,457 - DEBUG - Starting summarization
+2025-07-01 00:55:05,457 - DEBUG - Loading t5-small model
+2025-07-01 00:55:05,459 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-07-01 00:55:06,228 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-07-01 00:55:06,740 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-07-01 00:55:07,457 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-07-01 00:55:07,934 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-07-01 00:55:08,275 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-07-01 00:55:09,689 - DEBUG - Summarization successful
+2025-07-01 00:55:09,730 - DEBUG - Extracting key points
+2025-07-01 00:55:09,746 - DEBUG - Extracting decisions
+2025-07-01 00:55:09,746 - DEBUG - Extracting action items
+2025-07-01 00:55:09,746 - DEBUG - Generating conclusion
+2025-07-01 00:55:09,746 - DEBUG - Script completed successfully (or with handled error)
+2025-07-01 00:59:24,131 - DEBUG - Script initialized
+2025-07-01 00:59:24,131 - DEBUG - NLTK punkt download attempt
+2025-07-01 00:59:24,298 - DEBUG - NLTK punkt downloaded successfully
+2025-07-01 00:59:24,298 - DEBUG - Script started from main block
+2025-07-01 00:59:24,298 - DEBUG - Received transcript from CLI: Team discussed the project timeline and resource a...
+2025-07-01 00:59:24,298 - DEBUG - Processing transcript: Team discussed the project timeline and resource a...
+2025-07-01 00:59:24,298 - DEBUG - Starting summarization
+2025-07-01 00:59:24,298 - DEBUG - Loading t5-small model for the first time
+2025-07-01 00:59:24,307 - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-07-01 00:59:25,062 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/config.json HTTP/1.1" 200 0
+2025-07-01 00:59:25,514 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/generation_config.json HTTP/1.1" 200 0
+2025-07-01 00:59:25,800 - DEBUG - https://huggingface.co:443 "HEAD /t5-small/resolve/main/custom_generate/generate.py HTTP/1.1" 404 0
+2025-07-01 00:59:26,109 - DEBUG - https://huggingface.co:443 "GET /api/models/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 307 130
+2025-07-01 00:59:26,415 - DEBUG - https://huggingface.co:443 "GET /api/models/google-t5/t5-small/tree/main/additional_chat_templates?recursive=False&expand=False HTTP/1.1" 404 64
+2025-07-01 00:59:27,807 - DEBUG - Summarization successful
+2025-07-01 00:59:27,807 - DEBUG - Extracting key points
+2025-07-01 00:59:27,815 - DEBUG - Extracting decisions
+2025-07-01 00:59:27,815 - DEBUG - Extracting action items
+2025-07-01 00:59:27,815 - DEBUG - Generating conclusion
+2025-07-01 00:59:27,815 - DEBUG - Script completed successfully (or with handled error)
