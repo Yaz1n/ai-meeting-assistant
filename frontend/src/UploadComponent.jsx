@@ -21,11 +21,18 @@ const UploadComponent = ({ onSummary }) => {
       return;
     }
 
-    // Validate file type and size
-    const validTypes = ['audio/mpeg', 'audio/wav', 'video/mp4', 'text/plain'];
+    // ✅ Add .m4a support
+    const validTypes = [
+      'audio/mpeg',   // .mp3
+      'audio/mp4',    // .m4a (common)
+      'audio/x-m4a',  // .m4a (alternative)
+      'audio/wav',    // .wav
+      'video/mp4',    // .mp4
+      'text/plain'    // .txt
+    ];
     const maxSize = 10 * 1024 * 1024; // 10MB
     if (!validTypes.includes(file.type)) {
-      setError('Invalid file type. Please upload MP3, WAV, MP4, or TXT files.');
+      setError('Invalid file type. Please upload MP3, M4A, WAV, MP4, or TXT files.');
       return;
     }
     if (file.size > maxSize) {
@@ -54,7 +61,7 @@ const UploadComponent = ({ onSummary }) => {
       setError(err.response?.data?.error || 'An error occurred during processing');
     } finally {
       setLoading(false);
-      setTimeout(() => setProgress(''), 2000); // Clear progress message after 2s
+      setTimeout(() => setProgress(''), 2000);
     }
   };
 
@@ -64,7 +71,7 @@ const UploadComponent = ({ onSummary }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="file"
-          accept="audio/mpeg,audio/wav,video/mp4,text/plain"
+          accept=".mp3,.m4a,.wav,.mp4,.txt,audio/mpeg,audio/mp4,audio/x-m4a,audio/wav,video/mp4,text/plain"
           onChange={handleFileChange}
         />
         <button type="submit" disabled={loading}>
