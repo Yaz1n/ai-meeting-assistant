@@ -13,3 +13,6 @@ backend/*.json  # Excludes Firebase service account JSON
 
 # Build artifacts
 frontend/build/
+
+wireframe.md 
+development-plan.md 
