@@ -1,14 +1,17 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import { ClipLoader } from 'react-spinners';
 
 const UploadComponent = ({ onSummary }) => {
   const [file, setFile] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [progress, setProgress] = useState('');
   const [error, setError] = useState(null);
 
   const handleFileChange = (event) => {
     setFile(event.target.files[0]);
     setError(null);
+    setProgress('');
   };
 
   const handleSubmit = async (event) => {
@@ -18,26 +21,40 @@ const UploadComponent = ({ onSummary }) => {
       return;
     }
 
+    // Validate file type and size
+    const validTypes = ['audio/mpeg', 'audio/wav', 'video/mp4', 'text/plain'];
+    const maxSize = 10 * 1024 * 1024; // 10MB
+    if (!validTypes.includes(file.type)) {
+      setError('Invalid file type. Please upload MP3, WAV, MP4, or TXT files.');
+      return;
+    }
+    if (file.size > maxSize) {
+      setError('File size exceeds 10MB limit.');
+      return;
+    }
+
     setLoading(true);
-    setError(null);
+    setProgress('Uploading file...');
 
     const formData = new FormData();
     formData.append('file', file);
 
     try {
-      // Send file to /transcribe endpoint
+      setProgress('Transcribing audio...');
       const transcribeResponse = await axios.post('http://localhost:5000/transcribe', formData, {
         headers: { 'Content-Type': 'multipart/form-data' }
       });
       const transcript = transcribeResponse.data.transcript;
 
-      // Send transcript to /summarize endpoint
+      setProgress('Generating summary...');
       const summarizeResponse = await axios.post('http://localhost:5000/summarize', { transcript });
-      onSummary(summarizeResponse.data); // Pass summary to parent component
+      onSummary(summarizeResponse.data);
+      setProgress('Processing complete!');
     } catch (err) {
-      setError(err.response?.data?.error || 'An error occurred');
+      setError(err.response?.data?.error || 'An error occurred during processing');
     } finally {
       setLoading(false);
+      setTimeout(() => setProgress(''), 2000); // Clear progress message after 2s
     }
   };
 
@@ -47,14 +64,20 @@ const UploadComponent = ({ onSummary }) => {
       <form onSubmit={handleSubmit}>
         <input
           type="file"
-          accept="audio/*,video/*,text/plain"
+          accept="audio/mpeg,audio/wav,video/mp4,text/plain"
           onChange={handleFileChange}
         />
         <button type="submit" disabled={loading}>
           {loading ? 'Processing...' : 'Upload and Process'}
         </button>
       </form>
-      {error && <p style={{ color: 'red' }}>{error}</p>}
+      {loading && (
+        <div className="loading">
+          <ClipLoader size={30} color="#007bff" />
+          <p>{progress}</p>
+        </div>
+      )}
+      {error && <p className="error">{error}</p>}
     </div>
   );
 };
