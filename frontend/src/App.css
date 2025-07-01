@@ -5,12 +5,35 @@ body {
   background-color: #f4f4f4;
 }
 
-.upload-component,
-.summary-component,
-.meeting-list-component {
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  color: #333;
+}
+
+header p {
+  color: #666;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.upload-section,
+.summary-section,
+.meetings-section {
   background-color: white;
   padding: 20px;
-  margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
@@ -46,6 +69,18 @@ body {
   cursor: not-allowed;
 }
 
+.upload-component .loading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.upload-component .error {
+  color: red;
+  margin-top: 10px;
+}
+
 .summary-component h3 {
   color: #555;
   margin-top: 20px;
@@ -59,4 +94,18 @@ body {
 
 .meeting-list-component li {
   margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .upload-section {
+    width: 100%;
+  }
+  .summary-section,
+  .meetings-section {
+    width: calc(50% - 10px);
+  }
 }

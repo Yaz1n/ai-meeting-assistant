@@ -13,10 +13,21 @@ function App() {
 
   return (
     <div className="app">
-      <h1>AI Meeting Assistant</h1>
-      <UploadComponent onSummary={handleSummary} />
-      <SummaryComponent summaryData={summaryData} />
-      <MeetingListComponent />
+      <header>
+        <h1>AI Meeting Assistant</h1>
+        <p>Upload meeting files to generate summaries and track action items</p>
+      </header>
+      <div className="container">
+        <div className="upload-section">
+          <UploadComponent onSummary={handleSummary} />
+        </div>
+        <div className="summary-section">
+          <SummaryComponent summaryData={summaryData} />
+        </div>
+        <div className="meetings-section">
+          <MeetingListComponent />
+        </div>
+      </div>
     </div>
   );
 }
