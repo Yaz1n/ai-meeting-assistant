@@ -1,10 +1,20 @@
 import React from 'react';
 
 const MeetingListComponent = () => {
-  // Placeholder data (to be replaced with Firebase data on Day 7)
+  // Mock Firebase data
   const meetings = [
-    { id: 1, title: 'Project Kickoff', date: '2025-06-28', summary: 'Discussed project goals...' },
-    { id: 2, title: 'Sprint Planning', date: '2025-06-29', summary: 'Planned tasks for next sprint...' }
+    {
+      id: 'meeting_001',
+      title: 'Project Kickoff',
+      date: '2025-06-28T10:00:00Z',
+      summary: 'The team discussed project goals and timelines.'
+    },
+    {
+      id: 'meeting_002',
+      title: 'Sprint Planning',
+      date: '2025-06-29T14:00:00Z',
+      summary: 'Planned tasks for the next sprint and assigned roles.'
+    }
   ];
 
   return (
@@ -14,7 +24,7 @@ const MeetingListComponent = () => {
         {meetings.length > 0 ? (
           meetings.map((meeting) => (
             <li key={meeting.id}>
-              <strong>{meeting.title}</strong> - {meeting.date}
+              <strong>{meeting.title}</strong> - {new Date(meeting.date).toLocaleString()}
               <p>{meeting.summary}</p>
             </li>
           ))
