@@ -56,6 +56,13 @@ header p {
   font-size: 16px;
 }
 
+.upload-component input[type="text"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
 .upload-component button {
   background-color: #007bff;
   color: white;
@@ -77,6 +84,11 @@ header p {
 }
 
 .upload-component .error {
+  color: red;
+  margin-top: 10px;
+}
+
+.meeting-list-component .error {
   color: red;
   margin-top: 10px;
 }

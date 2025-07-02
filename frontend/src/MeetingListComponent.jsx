@@ -1,25 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
 const MeetingListComponent = () => {
-  // Mock Firebase data
-  const meetings = [
-    {
-      id: 'meeting_001',
-      title: 'Project Kickoff',
-      date: '2025-06-28T10:00:00Z',
-      summary: 'The team discussed project goals and timelines.'
-    },
-    {
-      id: 'meeting_002',
-      title: 'Sprint Planning',
-      date: '2025-06-29T14:00:00Z',
-      summary: 'Planned tasks for the next sprint and assigned roles.'
-    }
-  ];
+  const [meetings, setMeetings] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchMeetings = async () => {
+      try {
+        const response = await axios.get('http://localhost:5000/meetings');
+        setMeetings(response.data);
+        setLoading(false);
+      } catch (err) {
+        setError(err.response?.data?.error || 'Failed to load meetings');
+        setLoading(false);
+      }
+    };
+    fetchMeetings();
+  }, []);
 
   return (
     <div className="meeting-list-component">
       <h2>Past Meetings</h2>
+      {loading && <p>Loading meetings...</p>}
+      {error && <p className="error">{error}</p>}
       <ul>
         {meetings.length > 0 ? (
           meetings.map((meeting) => (
@@ -29,7 +34,7 @@ const MeetingListComponent = () => {
             </li>
           ))
         ) : (
-          <li>No past meetings available</li>
+          !loading && <li>No past meetings available</li>
         )}
       </ul>
     </div>

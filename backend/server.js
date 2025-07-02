@@ -1,20 +1,20 @@
 import express from 'express';
 import cors from 'cors';
-import transcribeRouter from './routes/transcribe.js';
-import summarizeRouter from './routes/summarize.js';
+import dotenv from 'dotenv';
+import transcribeRoutes from './routes/transcribe.js';
+import summarizeRoutes from './routes/summarize.js';
+import meetingsRoutes from './routes/meetings.js';
 
+dotenv.config();
 const app = express();
-const port = 5000;
 
 app.use(cors());
 app.use(express.json());
-app.use('/transcribe', transcribeRouter);
-app.use('/summarize', summarizeRouter);
+app.use('/transcribe', transcribeRoutes);
+app.use('/summarize', summarizeRoutes);
+app.use('/meetings', meetingsRoutes);
 
-app.get('/', (req, res) => {
-  res.send('AI Meeting Assistant Backend');
-});
-
-app.listen(port, () => {
-  console.log(`Server running at http://localhost:${port}`);
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => {
+  console.log(`Server running at http://localhost:${PORT}`);
 });
